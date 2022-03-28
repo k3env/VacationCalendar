@@ -1,11 +1,12 @@
 <ul>
   <li *ngFor="let employee of employeeList">
-    <button type="button" (click)="onSelect(employee)">
-      <span [style.background-color]="employee.color">
-        {{ employee.name }}
-      </span>
-    </button>
+    <a
+      routerLink="/employee/{{ employee.id }}"
+      [style.background-color]="employee.color"
+    >
+      {{ employee.name }}
+    </a>
   </li>
 </ul>
 
-<app-employee-detail [employee]="selectedEmployee"></app-employee-detail>
+<!-- <app-employee-detail [employee]="selectedEmployee"></app-employee-detail> -->
