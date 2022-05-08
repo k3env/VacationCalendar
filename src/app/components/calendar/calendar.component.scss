@@ -1,0 +1,21 @@
+.calendar {
+  @apply select-none;
+  .day-header {
+    @apply italic text-gray-500 pl-2;
+  }
+  .day {
+    @apply box-border;
+    @apply border-slate-600 bg-slate-600 text-white p-2 m-0 border-4 rounded-lg font-mono text-xs;
+    min-height: 90px;
+    max-height: 90px;
+    &.inactive {
+      @apply text-slate-400;
+    }
+    &.today {
+      @apply text-blue-400 underline underline-offset-2;
+    }
+    &.selected {
+      @apply border-blue-400;
+    }
+  }
+}

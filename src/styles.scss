@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  h1 {
+    @apply text-3xl;
+  }
+  h2 {
+    @apply text-2xl;
+  }
+  h3 {
+    @apply text-xl;
+  }
+  a {
+    @apply text-emerald-500 underline;
+  }
+  body {
+    @apply m-0 p-0 px-4;
+  }
+  ul {
+    @apply list-disc list-inside;
+  }
+  ul li {
+    @apply list-item;
+  }
+}
+@tailwind components;
+@tailwind utilities;

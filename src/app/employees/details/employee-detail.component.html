@@ -1,0 +1,38 @@
+<div *ngIf="employee">
+  <h2 class="font-bold">{{ employee.name }}</h2>
+  <p>id: {{ employee.id }}</p>
+  <p>
+    color:
+    <span id="colorBadge" [style.background-color]="employee.color">{{
+      employee.color
+    }}</span>
+  </p>
+  <p>created at: {{ formatDate(employee.created_at, "dd.MM.yyyy HH:mm") }}</p>
+  <div class="m-2 mb-5">
+    <button class="btn btn-secondary mr-2" type="button" (click)="goBack()">
+      Go back
+    </button>
+    <a class="btn btn-primary mr-2 gap-2" routerLink="edit"
+      ><i class="fa-solid fa-pen"></i>Edit</a
+    >
+    <label for="delete-modal" class="btn btn-warning gap-2 modal-button"
+      ><i class="fa-solid fa-trash-can"></i>Delete</label
+    >
+  </div>
+
+  <app-vacations-detail [vacations]="vacations"></app-vacations-detail>
+
+  <input type="checkbox" id="delete-modal" class="modal-toggle" />
+  <label for="delete-modal" class="modal cursor-pointer">
+    <label class="modal-box relative" for="">
+      <h3 class="font-bold text-lg">
+        Delete &laquo;{{ employee.name }}&raquo;?
+      </h3>
+      <p class="py-4">Are you sure? This action is irreversible!</p>
+      <div class="modal-action">
+        <a (click)="onDelete()" class="btn btn-error"> Yes </a>
+        <label for="delete-modal" class="btn">No</label>
+      </div>
+    </label>
+  </label>
+</div>

@@ -1,0 +1,27 @@
+<div class="calendar">
+  <div class="btn-group">
+    <button class="btn btn-primary" (click)="decrementMonth()">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <button class="btn btn-primary capitalize">{{ showedDate }}</button>
+    <button class="btn btn-primary" (click)="incrementMonth()">
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+  <div class="grid grid-cols-7 gap-1 grid-flow-row">
+    <div
+      class="day-header"
+      *ngFor="let d of ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+    >
+      {{ d }}
+    </div>
+    <div
+      class="day"
+      *ngFor="let day of days"
+      [ngClass]="day.class"
+      (click)="onSelect(day)"
+    >
+      <tw-calendar-day [day]="day"></tw-calendar-day>
+    </div>
+  </div>
+</div>

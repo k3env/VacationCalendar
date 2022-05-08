@@ -1,0 +1,15 @@
+// td {
+//   @apply table-cell border border-gray-700 align-middle content-center items-center;
+// }
+
+// a.tw-button {
+//   @apply text-base;
+//   @apply align-middle;
+//   i {
+//     @apply mr-3;
+//   }
+// }
+option {
+  all: unset;
+  @apply border-r-2 border-lime-200;
+}

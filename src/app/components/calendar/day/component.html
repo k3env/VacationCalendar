@@ -1,0 +1,8 @@
+<span class="day-view">{{ day?.view }}</span>
+<div class="day-content">
+  <div *ngFor="let c of day?.content">
+    <div class="tooltip tooltip-accent" [attr.data-tip]="c.name">
+      <span [style.background-color]="c.color" class="dot"></span>
+    </div>
+  </div>
+</div>

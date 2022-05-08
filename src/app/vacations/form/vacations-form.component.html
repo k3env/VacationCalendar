@@ -1,0 +1,52 @@
+<input type="checkbox" [id]="modalId" class="modal-toggle" />
+<label [for]="modalId" class="modal cursor-pointer">
+  <label class="modal-box relative" for="">
+    <h3 class="font-bold text-lg">
+      {{ modalHeader }}
+    </h3>
+    <form [formGroup]="vacationForm" (ngSubmit)="onSubmit()">
+      <div class="control-element">
+        <label class="input-group w-full">
+          <span class="label">Employee</span>
+          <select
+            class="select select-bordered field"
+            formControlName="employeeId"
+          >
+            <option disabled selected value="0">Pick an employee</option>
+            <option *ngFor="let e of employees" [value]="e.id">
+              {{ e.name }}
+            </option>
+          </select>
+        </label>
+      </div>
+      <div class="control-element">
+        <label class="input-group w-full">
+          <span class="label">Start</span>
+          <input
+            type="date"
+            placeholder="Date"
+            class="input input-bordered field"
+            formControlName="start"
+          />
+        </label>
+      </div>
+      <div class="control-element">
+        <label class="input-group w-full">
+          <span class="label">Duration</span>
+          <input
+            type="number"
+            placeholder="Vacation duration"
+            class="input input-bordered field"
+            formControlName="duration"
+          />
+        </label>
+      </div>
+      <div class="modal-action">
+        <button class="btn" [ngClass]="submitClass" type="submit">
+          {{ submitText }}
+        </button>
+        <label [for]="modalId" class="btn">cancel</label>
+      </div>
+    </form>
+  </label>
+</label>

@@ -1,0 +1,15 @@
+form {
+  @apply grid grid-cols-1 gap-2 mt-3;
+  .control-element {
+    @apply form-control; // w-full max-w-xs;
+    label.input-group {
+      span.label {
+        @apply w-36;
+      }
+      input,
+      select {
+        @apply w-auto;
+      }
+    }
+  }
+}

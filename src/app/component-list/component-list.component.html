@@ -1,0 +1,73 @@
+<h2>Buttons</h2>
+<table class="table w-full">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Default</th>
+      <th>Primary</th>
+      <th>Secondary</th>
+      <th>Accent</th>
+      <th>Info</th>
+      <th>Success</th>
+      <th>Warning</th>
+      <th>Error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Flat regular</td>
+      <td *ngFor="let class of colorClasses">
+        <a href="#" [ngClass]="class" class="btn gap-2">Button</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Outline regular</td>
+      <td *ngFor="let class of colorClasses">
+        <a href="#" [ngClass]="class" class="btn btn-outline gap-2">Button</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Flat small</td>
+      <td *ngFor="let class of colorClasses">
+        <a href="#" [ngClass]="class" class="btn btn-sm gap-2">Button</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Outline small</td>
+      <td *ngFor="let class of colorClasses">
+        <a href="#" [ngClass]="class" class="btn btn-outline btn-sm gap-2"
+          >Button</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>Flat with icon</td>
+      <td *ngFor="let class of colorClasses">
+        <a href="#" [ngClass]="class" class="btn gap-2"
+          ><i class="fa-solid fa-pencil"></i>Button</a
+        >
+      </td>
+    </tr>
+    <tr>
+      <td>Outline with icon</td>
+      <td *ngFor="let class of colorClasses">
+        <a href="#" [ngClass]="class" class="btn btn-outline gap-2"
+          ><i class="fa-solid fa-pencil"></i>Button</a
+        >
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+
+<h2>Input box</h2>
+
+<h2>Calendar view</h2>
+<tw-calendar #calendar selectMode="multi" [data]="vacations"></tw-calendar>
+<app-vacations-detail [vacations]="vData"></app-vacations-detail>
+
+<div class="p-10">
+  <div class="tooltip" data-tip="hello">
+    <span class="badge"></span>
+  </div>
+</div>

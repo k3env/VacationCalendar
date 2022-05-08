@@ -1,0 +1,21 @@
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-4 w-full m-0">
+  <tw-calendar
+    #calendar
+    class="col-span-2"
+    selectMode="single"
+    [data]="vacations"
+    [ngDoCheck]="updateContent"
+  ></tw-calendar>
+  <div
+    class="border-t-2 lg:border-l-2 lg:border-t-0 border-slate-700 p-5 h-full w-full"
+    [ngSwitch]="selection !== undefined"
+  >
+    <div *ngSwitchCase="true" class="flex flex-col">
+      <h2>Выбран день: {{ selection?.view }}</h2>
+    </div>
+    <div *ngSwitchCase="false">
+      <h2>Выберите день</h2>
+    </div>
+    <app-vacations-detail [vacations]="dayVacations"></app-vacations-detail>
+  </div>
+</div>

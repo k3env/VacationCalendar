@@ -1,0 +1,50 @@
+<div *ngIf="!isListEmpty()">
+  <div class="flex flex-wrap gap-4">
+    <div
+      class="card w-72 bg-base-200 shadow-lg hover:shadow-white transition-shadow border-l-4 border border-t-white"
+      [style.border-left-color]="employee.color"
+      *ngFor="let employee of employeeList"
+    >
+      <div class="card-body">
+        <h2 class="card-title">
+          <span
+            class="badge"
+            [style.border-color]="employee.color"
+            [style.background-color]="employee.color"
+          ></span
+          >{{ employee.name }}
+        </h2>
+        <div class="card-actions justify-end">
+          <div class="btn-group">
+            <a
+              routerLink="/employee/{{ employee.id }}"
+              class="btn btn-primary btn-sm"
+              ><i class="fa-solid fa-magnifying-glass"></i
+            ></a>
+            <a
+              routerLink="/employee/{{ employee.id }}/edit"
+              class="btn btn-primary btn-sm"
+              ><i class="fa-solid fa-pen"></i
+            ></a>
+            <a class="btn btn-error btn-sm btn-disabled"
+              ><i class="fa-solid fa-trash-can"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a
+    class="btn btn-secondary btn-circle fixed bottom-5 right-5"
+    routerLink="/employees/new"
+    ><i class="fa-solid fa-plus"></i
+  ></a>
+</div>
+<div *ngIf="isListEmpty()" class="container place-content-center">
+  <p class="flex w-full text-2xl text-gray-600">
+    Employees not found, click button below for add first employee
+  </p>
+  <a class="btn btn-primary fixed bottom-5 right-5" routerLink="/employees/new"
+    >Add first employee</a
+  >
+</div>

@@ -10,11 +10,26 @@ import { HttpClient } from '@angular/common/http';
 export class EmployeeService {
   constructor(private http: HttpClient) {}
 
+  // TODO: Add error handlers
   getEmployees(): Observable<Employee[]> {
     return this.http.get<Employee[]>(`${AppModule.baseUrl}/employee`);
   }
 
   getEmployee(id: number): Observable<Employee> {
     return this.http.get<Employee>(`${AppModule.baseUrl}/employee/${id}`);
+  }
+
+  addEmployee(payload: Employee): Observable<Employee> {
+    return this.http.post<Employee>(`${AppModule.baseUrl}/employee`, payload);
+  }
+
+  updateEmployee(payload: Employee): Observable<Employee> {
+    return this.http.post<Employee>(
+      `${AppModule.baseUrl}/employee/${payload.id}`,
+      payload
+    );
+  }
+  deleteEmployee(id: number): Observable<null> {
+    return this.http.delete<null>(`${AppModule.baseUrl}/employee/${id}`);
   }
 }

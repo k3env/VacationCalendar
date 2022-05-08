@@ -1,0 +1,13 @@
+span.day-view {
+  @apply block;
+  @apply mb-1 text-base;
+}
+
+.day-content {
+  @apply flex flex-wrap flex-row;
+}
+span.dot {
+  @apply inline-block;
+  @apply w-2 h-2 mr-1 mb-1;
+  @apply border border-gray-700;
+}

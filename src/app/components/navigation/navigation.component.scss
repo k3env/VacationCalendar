@@ -1,0 +1,56 @@
+nav {
+  @apply bg-indigo-800;
+
+  .nav-container-root {
+    @apply max-w-7xl mx-auto px-2 sm:px-6 lg:px-8;
+    .nav-container {
+      @apply relative flex items-center justify-between h-16;
+      .nav-container-button {
+        @apply absolute inset-y-0 left-0 flex items-center sm:hidden;
+        button.menu-button {
+          @apply inline-flex items-center justify-center p-2 rounded-md text-indigo-400 hover:text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white;
+        }
+      }
+      .nav-container-menu {
+        @apply flex-1 flex items-center justify-center sm:items-stretch sm:justify-start;
+        .logo {
+          @apply flex-shrink-0 flex items-center;
+          img.small {
+            @apply block lg:hidden h-8 w-auto;
+          }
+          img.big {
+            @apply hidden lg:block h-8 w-auto;
+          }
+        }
+      }
+    }
+  }
+
+  #mobile-menu {
+    @apply sm:hidden;
+    .menu-items {
+      @apply px-2 pt-2 pb-3 space-y-1;
+    }
+    a.menu-item {
+      @apply text-base;
+    }
+  }
+
+  #desktop-menu {
+    @apply hidden sm:block sm:ml-6;
+    .menu-items {
+      @apply flex space-x-4;
+    }
+    a.menu-item {
+      @apply text-sm;
+    }
+  }
+
+  a.menu-item {
+    @apply block px-3 py-2 rounded-md font-medium no-underline;
+    @apply text-indigo-300 hover:bg-indigo-700 hover:text-white;
+    &.menu-item-active {
+      @apply bg-indigo-900 text-white hover:bg-indigo-900;
+    }
+  }
+}

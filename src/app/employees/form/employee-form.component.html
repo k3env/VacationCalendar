@@ -1,0 +1,45 @@
+<form
+  #employeeForm="ngForm"
+  (ngSubmit)="onSubmit()"
+  class="grid grid-cols-1 gap-3"
+>
+  <div class="form-control w-full max-w-xs">
+    <label class="input-group">
+      <span class="w-24">Name</span>
+      <input
+        type="text"
+        placeholder="Employee name"
+        class="input input-bordered w-full"
+        [(ngModel)]="model.name"
+        id="name"
+        name="name"
+        #name="ngModel"
+      />
+    </label>
+  </div>
+  <div class="form-control w-full max-w-xs">
+    <label class="input-group">
+      <span class="w-24">Color</span>
+      <input
+        type="color"
+        placeholder="Employee name"
+        class="input input-bordered w-full"
+        [(ngModel)]="model.color"
+        id="color"
+        name="color"
+        #name="ngModel"
+      />
+    </label>
+  </div>
+
+  <div class="flex gap-2">
+    <button class="btn btn-primary" type="submit">Submit</button>
+    <button
+      class="btn btn-secondary btn-outline"
+      type="button"
+      (click)="goBack()"
+    >
+      Go back
+    </button>
+  </div>
+</form>

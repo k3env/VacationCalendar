@@ -1,0 +1,13 @@
+<div class="vacation-item" [style.border-left-color]="item.employee.color">
+  <span class="flex-1"
+    >{{ datefmt(item.start) }} - {{ datefmt(item.end) }}</span
+  >
+  <div class="btn-group flex-none">
+    <label for="modal-edit-{{ item.id }}" class="btn btn-sm btn-primary">
+      <i class="fa-solid fa-pencil"></i>
+    </label>
+    <label for="modal-delete-{{ item.id }}" class="btn btn-sm btn-error">
+      <i class="fa-solid fa-trash"></i>
+    </label>
+  </div>
+</div>

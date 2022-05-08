@@ -1,0 +1,64 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<nav>
+  <div class="nav-container-root">
+    <div class="nav-container">
+      <div class="nav-container-button">
+        <!-- Mobile menu button-->
+        <button type="button" class="menu-button" (click)="toggleMenu()">
+          <span class="sr-only">Open main menu</span>
+          <i class="fa-solid" [ngClass]="menuButtonState"></i>
+        </button>
+      </div>
+      <div class="nav-container-menu">
+        <div class="logo">
+          <img
+            class="small"
+            src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
+            alt="Workflow"
+          />
+          <img
+            class="big"
+            src="https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg"
+            alt="Workflow"
+          />
+        </div>
+        <div id="desktop-menu">
+          <div class="menu-items">
+            <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+            <a
+              *ngFor="let item of items"
+              [routerLink]="item.routerLink"
+              routerLinkActive="menu-item-active"
+              class="menu-item"
+              >{{ item.caption }}</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu, show/hide based on menu state. -->
+  <div [ngClass]="menuState" id="mobile-menu">
+    <div class="menu-items" (click)="closeMenu()">
+      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+      <a
+        *ngFor="let item of items"
+        [routerLink]="item.routerLink"
+        routerLinkActive="menu-item-active"
+        class="menu-item"
+        >{{ item.caption }}</a
+      >
+    </div>
+  </div>
+</nav>
+
+<!-- <ng-template #menuItem>
+  <a
+    *ngFor="let item of items"
+    [routerLink]="item.routerLink"
+    routerLinkActive="menu-item-active"
+    class="menu-item"
+    >{{ item.caption }}</a
+  >
+</ng-template> -->

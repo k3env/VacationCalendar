@@ -15,6 +15,10 @@ export class EmployeesComponent implements OnInit {
     this.selectedEmployee = employee;
   }
 
+  isListEmpty(): boolean {
+    return this.employeeList.length === 0;
+  }
+
   constructor(private employeeService: EmployeeService) {}
 
   getEmployees(): void {
