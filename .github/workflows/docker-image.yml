@@ -2,7 +2,7 @@ name: Docker Image CI
 on:
   push:
     tags:
-      - "v*"
+      - "*"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,4 +25,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/vacation-calendar-frontend:${{ github.event.release.tag_name }} , ${{ secrets.DOCKER_HUB_USERNAME }}/vacation-calendar-frontend:latest
+          tags: ${{ secrets.DOCKER_HUB_USERNAME }}/vacation-calendar-frontend:${{ github.ref_name }} , ${{ secrets.DOCKER_HUB_USERNAME }}/vacation-calendar-frontend:latest
