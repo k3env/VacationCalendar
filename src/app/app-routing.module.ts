@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'employees', component: EmployeesComponent, pathMatch: 'full' },
   { path: 'vacations', component: VacationsListComponent, pathMatch: 'full' },
-  isDevMode() ? { path: 'components', component: ComponentListComponent } : {},
+  { path: 'components', component: ComponentListComponent },
   { path: '', redirectTo: '/employees', pathMatch: 'full' },
 ];
 
