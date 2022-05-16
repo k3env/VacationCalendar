@@ -18,14 +18,12 @@ export class ComponentListComponent implements OnInit {
   }
 
   log(e: Event): void {
-    console.log(e);
   }
   get display(): string {
     return this.isVisible ? 'block' : 'none';
   }
 
   show(): void {
-    console.log('test');
   }
   hide(): void {}
 

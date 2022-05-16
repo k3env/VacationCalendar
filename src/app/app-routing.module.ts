@@ -1,5 +1,5 @@
 import { VacationsListComponent } from './vacations/list/vacations-list.component';
-import { NgModule } from '@angular/core';
+import { isDevMode, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EmployeeDetailComponent } from './employees/details/employee-detail.component';
 import { EmployeeFormComponent } from './employees/form/employee-form.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   { path: 'employees', component: EmployeesComponent, pathMatch: 'full' },
   { path: 'vacations', component: VacationsListComponent, pathMatch: 'full' },
-  { path: 'components', component: ComponentListComponent },
+  isDevMode() ? { path: 'components', component: ComponentListComponent } : {},
   { path: '', redirectTo: '/employees', pathMatch: 'full' },
 ];
 

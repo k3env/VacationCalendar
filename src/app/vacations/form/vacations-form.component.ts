@@ -106,7 +106,6 @@ export class VacationsFormComponent implements OnInit {
     this.employeeService
       .getEmployees()
       .subscribe((employees) => (this.employees = employees));
-    console.log(this.model);
     this.vacationForm.patchValue(this.interfaceToModel(this.model));
   }
 

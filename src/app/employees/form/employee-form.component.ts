@@ -23,7 +23,6 @@ export class EmployeeFormComponent implements OnInit {
     private location: Location,
     @Inject(LOCALE_ID) private locale: string
   ) {
-    console.log(locale);
   }
 
   ngOnInit(): void {
