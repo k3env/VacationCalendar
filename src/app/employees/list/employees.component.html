@@ -26,12 +26,25 @@
               class="btn btn-primary btn-sm"
               ><i class="fa-solid fa-pen"></i
             ></a>
-            <a class="btn btn-error btn-sm btn-disabled"
-              ><i class="fa-solid fa-trash-can"></i
-            ></a>
           </div>
+          <label for="delete-modal-{{ employee.id }}" class="btn btn-error btn-sm"
+            ><i class="fa-solid fa-trash-can"></i
+          ></label>
         </div>
       </div>
+      <input type="checkbox" id="delete-modal-{{ employee.id }}" class="modal-toggle" />
+      <label for="delete-modal-{{ employee.id }}" class="modal cursor-pointer">
+        <label class="modal-box relative" for="">
+          <h3 class="font-bold text-lg">
+            Delete &laquo;{{ employee.name }}&raquo;?
+          </h3>
+          <p class="py-4">Are you sure? This action is irreversible!</p>
+          <div class="modal-action">
+            <a (click)="onDelete(employee.id)" class="btn btn-error"> Yes </a>
+            <label for="delete-modal-{{ employee.id }}" class="btn">No</label>
+          </div>
+        </label>
+      </label>
     </div>
   </div>
   <a

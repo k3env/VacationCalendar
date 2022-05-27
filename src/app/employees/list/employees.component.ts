@@ -1,6 +1,8 @@
 import { Employee } from 'src/models/employee';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, LOCALE_ID, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/services/employee.service';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-employees',
@@ -19,7 +21,12 @@ export class EmployeesComponent implements OnInit {
     return this.employeeList.length === 0;
   }
 
-  constructor(private employeeService: EmployeeService) {}
+  constructor(
+    private employeeService: EmployeeService,
+    private location: Location,
+    private router: Router,
+    @Inject(LOCALE_ID) private locale: string
+  ) {}
 
   getEmployees(): void {
     this.employeeService
@@ -29,5 +36,10 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getEmployees();
+  }
+  onDelete(id: number): void {
+    this.employeeService
+      .deleteEmployee(id as number)
+      .subscribe((r) => window.location.reload());
   }
 }
