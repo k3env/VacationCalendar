@@ -39,7 +39,7 @@ export class EmployeesComponent implements OnInit {
   }
   onDelete(id: number): void {
     this.employeeService
-      .deleteEmployee(id as number)
+      .deleteEmployee(id)
       .subscribe((r) => window.location.reload());
   }
 }
